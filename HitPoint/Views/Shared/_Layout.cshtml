@@ -12,7 +12,7 @@
 <body>
     
     <header>
-        <div class="flex-grow-1 flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+        <div class="flex-grow-1 flex-shrink-0 p-3 text-bg-dark" style="width: 150px; height: 1000px">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
       <span class="fs-4">HitPoint</span>
@@ -20,7 +20,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="../Views/Home/Index.cshtml" class="nav-link active" aria-current="page">
+        <a asp-action="Index" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="30" height="16"><use xlink:href="#home"></use></svg>
           Início
         </a>
@@ -32,21 +32,15 @@
         </a>
       </li>
       <li>
-        <a href="../Views/Home/Filial.cshtml" class="nav-link text-white">
+        <a asp-action="Filial" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Filial
         </a>
       </li>
       <li>
-        <a href="../Views/Home/Colaborador.cshtml" class="nav-link text-white">
+        <a asp-action="Colaborador" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           Colaborador
-        </a>
-      </li>
-      <li>
-        <a href="../Views/Home/Usuario.cshtml" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Usuario
         </a>
       </li>
       <li>
