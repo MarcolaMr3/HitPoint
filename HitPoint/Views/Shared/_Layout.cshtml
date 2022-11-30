@@ -12,9 +12,9 @@
 <body>
 
     <header>
-        <nav  class="navbar  navbar-dark bg-dark position-fixed">
+        <nav class="navbar  navbar-dark bg-dark position-fixed">
             <div class="container-fluid">
-                <a class="navbar-brand"> <img class="HitPointLogo" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Hitpoint_Studios_Logo.png" /> </a>
+                <img class="HitPointLogo" src="Logotipo.png" />
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,49 +26,42 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" asp-action="Filial" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Filial
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" asp-action="CadastrarFil">Cadastrar Filiais</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" asp-action="ListarFil">Listar Filiais</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" asp-action="Empresa" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Empresa
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <a class="nav-link dropdown-toggle" asp-action="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Empresa
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" asp-action="CadastrarEmp">Cadastrar Empresa</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" asp-action="ListarEmp">Listar Empresas</a></li>
+                            </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Colaborador
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <a class="nav-link dropdown-toggle" asp-action="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Colaborador
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" asp-action="CadastrarCol">Cadastrar Colaborador</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" asp-action="ListarCol">Listar Colaboradores</a></li>
+                            </ul>
                             </li>
                         </ul>
                         <form class="d-flex mt-3" role="search">
