@@ -1,7 +1,3 @@
-html {
-    font-size: 14px;
-    padding: 10px;
-}
 
 @media (min-width: 1000px) {
     html {
@@ -13,6 +9,7 @@ html {
 html {
     padding: 10px;
     min-height: 100%;
+    font-size: 14px;
 }
 
 
@@ -128,9 +125,18 @@ body {
 }
 
 .container-fluid {
-    position: sticky;
-    border-radius: 10px;
+    
+
+    
 }
 .navbar {
+   
+    border-radius: 5px;
+    height: 10%;
+    width: 10%;
+}
+.HitPointLogo {
     
+    width: 85%;
+   
 }
