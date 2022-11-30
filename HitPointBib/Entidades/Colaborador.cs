@@ -25,5 +25,59 @@ namespace HitPointBib.Utils.Entidades
             _Records.Add(colaborador);
         }
 
+        public static void ListarFuncionario()
+        {
+            Console.WriteLine("Insira o nome do Funcionário");
+            int nome = int.Parse(Console.ReadLine());
+
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"SELECT * FROM FUNCIONARIOS WHERE ID = {nome}", conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"{reader[1]}");
+                    }
+                }
+            }
+        }
+        public static void ListarFuncionarios()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"SELECT * FROM FUNCIONARIOS", conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"{reader[1]}");
+                    }
+                }
+            }
+        }
+        public static void PreencherCadastro()
+        {
+            Console.Write("Informe seu nome: ");
+            string nome = Console.ReadLine();
+
+            Console.WriteLine("Informe sua empresa");
+            int empresaID = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe sua filial");
+            int filialID = int.Parse(Console.ReadLine());
+
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"INSERT INTO FUNCIONARIOS (ID, NOME, EMPRESAID, FILIALID)" +
+                $" VALUES (NEXT VALUE FOR FUNCIONARIOS_SEQ, '{nome}', {empresaID}, {filialID})", conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

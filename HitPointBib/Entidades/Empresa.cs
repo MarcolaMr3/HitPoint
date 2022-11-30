@@ -24,5 +24,36 @@ namespace HitPointBib.Entidades
         {
             _Records.Add(empresa);
         }
+
+        public static void ListarEmpresas()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"SELECT * FROM EMPRESAS", conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"{reader[1]}");
+                    }
+                }
+            }
+        }
+
+        public static void PreencherCadastro()
+        {
+            Console.Write("Informe o nome da sua Empresa: ");
+            string nome = Console.ReadLine();
+
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"INSERT INTO EMPRESAS (ID, NOME)" +
+                $" VALUES (NEXT VALUE FOR EMPRESAS_SEQ, '{nome}')", conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
