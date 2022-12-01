@@ -30,9 +30,5 @@
             };
             return result;
         }
-        internal static List<ColaboradorModel> QuerryAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

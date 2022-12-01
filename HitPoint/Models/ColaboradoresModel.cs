@@ -1,10 +1,11 @@
-﻿namespace HitPoint.Models
+﻿using HitPoint.Utils.Entidades;
+namespace HitPoint.Models
 {
     public class ColaboradoresModel
     {
-        public List<ColaboradorModel> GetAll()
+        public List<Colaborador> GetAll()
         {
-            return ColaboradorModel.QuerryAll();
+            return Colaborador.QuerryAll();
         }
     }
 }

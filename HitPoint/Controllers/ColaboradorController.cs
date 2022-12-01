@@ -8,7 +8,7 @@ namespace HitPoint.Web.Controllers
     {
         public IActionResult ListarCol()
         {
-            var model = new ColaboradorModel();
+            var model = new ColaboradoresModel();
             return View(model);
         }
 

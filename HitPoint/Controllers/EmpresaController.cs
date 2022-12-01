@@ -7,7 +7,7 @@ namespace HitPoint.Web.Controllers
     {
         public IActionResult ListarEmp()
         {
-            var model = new EmpresaModel();
+            var model = new EmpresasModel();
             return View(model);
         }
 

@@ -8,7 +8,7 @@ namespace HitPoint.Web.Controllers
     {
         public IActionResult ListarFil()
         {
-            var model = new FilialModel();
+            var model = new FiliaisModel();
             return View(model);
         }
 
