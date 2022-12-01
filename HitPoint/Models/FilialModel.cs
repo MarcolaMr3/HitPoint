@@ -1,4 +1,6 @@
-﻿using HitPoint.Utils.Entidades;
+﻿using HitPoint.Utils.Database;
+using HitPoint.Utils.Entidades;
+using System.Data.SqlClient;
 
 namespace HitPoint.Models
 {

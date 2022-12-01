@@ -97,6 +97,25 @@ namespace HitPoint.Utils.Entidades
                 cmd.ExecuteNonQuery();
             }
         }
+        public string PegarNomeEmpresa()
+        {
+            var result = string.Empty;
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var querry = $"SELECT NOME FROM EMPRESAS WHERE ID = {EmpresaID}";
+                var cmd = new SqlCommand(querry, conn);
+
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        result = reader.GetString(0);
+                    }
+                }
+            }
+            return result;
+        }
 
     }
 }
