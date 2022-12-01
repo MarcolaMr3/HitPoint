@@ -1,10 +1,10 @@
 ﻿@model FilialModel
 @{
-    ViewData["Title"] = "Empresa";
+    ViewData["Title"] = "Filial";
 }
 <div>
     <h3 class="text-center">Alterar Filial</h3>
-    <form asp-controller="Colaborador" asp-action="Alterar" method="post">
+    <form asp-controller="Filial" asp-action="Alterar" method="post">
         <div class="form-group">
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" asp-for="Nome">

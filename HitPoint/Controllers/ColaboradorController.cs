@@ -17,6 +17,49 @@ namespace HitPoint.Web.Controllers
             return View();
         }
 
-        
+        [HttpPost]
+        public IActionResult CadastrarCol(ColaboradorModel model)
+        {
+            var colaborador = new Colaborador()
+            {
+                Nome = model.Nome,
+                EmpresaID = model.EmpresaID,
+                FilialID = model.FilialID,
+                PIS = model.PIS,
+
+            };
+
+            colaborador.Cadastrar();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Alterar(int id)
+        {
+            var colaborador = new Colaborador(id);
+            var model = new ColaboradorModel(colaborador);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(ColaboradorModel model)
+        {
+            var colaborador = model.GerarColaborador();
+            colaborador.Alterar();
+            return RedirectToAction("Index");
+        }
+        public IActionResult Deletar(int id)
+        {
+            var colaborador = new Colaborador(id);
+            var model = new ColaboradorModel(colaborador);
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Delete(ColaboradorModel model)
+        {
+            var colaborador = model.GerarColaborador();
+            colaborador.Deletar();
+
+            return RedirectToAction("Index");
+        }
     }
 }
