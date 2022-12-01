@@ -46,15 +46,15 @@ namespace HitPoint.Web.Controllers
         }
         public IActionResult Deletar(int id)
         {
-            var colaborador = new Colaborador(id);
-            var model = new ColaboradorModel(colaborador);
+            var empresa = new Empresa(id);
+            var model = new EmpresaModel(empresa);
             return View(model);
         }
         [HttpPost]
-        public IActionResult Delete(ColaboradorModel model)
+        public IActionResult Deletar(EmpresaModel model)
         {
-            var colaborador = model.GerarColaborador();
-            colaborador.Deletar();
+            var empresa = model.GerarEmpresa();
+            empresa.Deletar();
 
             return RedirectToAction("Index");
         }
