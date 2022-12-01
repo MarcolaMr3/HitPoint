@@ -3,81 +3,104 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using HitPointBib.Database;
+using System.Xml.Linq;
 
-namespace HitPointBib.Utils.Entidades
+namespace HitPointBib.Entidades
 {
     public class Colaborador
     {
         public int ID { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string NickName { get; set; } = string.Empty;
-        public string AcessType { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
+        public int EmpresaID { get; set; }
+        public int FilialID { get; set; }
+        public decimal PIS { get; set; }
 
-        private static List<Colaborador> _Records = new List<Colaborador>();
+        public Colaborador() { }
+
+        public Colaborador(int id)
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"SELECT ID, NOME, EMPRESAID, FILIALID, PIS FROM FUNCIONARIOS WHERE ID = {id}", conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        ID = reader.GetInt32(0);
+                        Nome = reader.GetString(1);
+                        EmpresaID = reader.GetInt32(2);
+                        FilialID = reader.GetInt32(3);
+                        PIS = reader.GetDecimal(4);
+                    }
+                }
+            }
+        }
+
         public static List<Colaborador> QuerryAll()
         {
-            return _Records;
-        }
-        public static void Create(Colaborador colaborador)
-        {
-            _Records.Add(colaborador);
-        }
-
-        public static void ListarFuncionario()
-        {
-            Console.WriteLine("Insira o nome do Funcionário");
-            int nome = int.Parse(Console.ReadLine());
+            var lista = new List<Colaborador>();
 
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
-                var cmd = new SqlCommand($"SELECT * FROM FUNCIONARIOS WHERE ID = {nome}", conn);
+                var cmd = new SqlCommand($"SELECT ID, NOME, EMPRESAID, FILIALID, PIS FROM FUNCIONARIOS", conn);
                 conn.Open();
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine($"{reader[1]}");
+                        var id = reader.GetInt32(0);
+                        lista.Add(new Colaborador()
+                        {
+                            ID = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            EmpresaID = reader.GetInt32(2),
+                            FilialID = reader.GetInt32(3),
+                            PIS = reader.GetDecimal(4),
+                        });
                     }
                 }
             }
+
+            return lista;
         }
-        public static void ListarFuncionarios()
+
+        public void Cadastrar()
         {
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
-                var cmd = new SqlCommand($"SELECT * FROM FUNCIONARIOS", conn);
-                conn.Open();
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine($"{reader[1]}");
-                    }
-                }
-            }
-        }
-        public static void PreencherCadastro()
-        {
-            Console.Write("Informe seu nome: ");
-            string nome = Console.ReadLine();
-
-            Console.WriteLine("Informe sua empresa");
-            int empresaID = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Informe sua filial");
-            int filialID = int.Parse(Console.ReadLine());
-
-            using (var conn = new SqlConnection(DBInfo.DBConnection))
-            {
-                var cmd = new SqlCommand($"INSERT INTO FUNCIONARIOS (ID, NOME, EMPRESAID, FILIALID)" +
-                $" VALUES (NEXT VALUE FOR FUNCIONARIOS_SEQ, '{nome}', {empresaID}, {filialID})", conn);
+                var cmd = new SqlCommand($"INSERT INTO FUNCIONARIOS (ID, NOME, EMPRESAID, FILIALID, PIS)" +
+                $" VALUES (NEXT VALUE FOR FUNCIONARIOS_SEQ, '{Nome}', {EmpresaID}, {FilialID}, {PIS})", conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void Deletar()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"DELETE FROM FUNCIONARIOS WHERE ID = {ID}", conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Alterar()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var querry = $"UPDATE FUNCIONARIOS SET NOME = '{Nome}', EMPRESAID = {EmpresaID}, FILIALID = {FilialID}, PIS = {PIS} WHERE ID = {ID}";
+                var cmd = new SqlCommand(querry, conn);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

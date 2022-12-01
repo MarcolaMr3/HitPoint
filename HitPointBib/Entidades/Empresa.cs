@@ -1,59 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HitPointBib.Database;
 
 namespace HitPointBib.Entidades
 {
     internal class Empresa
     {
         public int ID { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string NickName { get; set; } = string.Empty;
-        public string AcessType { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
+        public decimal CNPJ { get; set; }
 
-        private static List<Empresa> _Records = new List<Empresa>();
-        public static List<Empresa> QuerryAll()
-        {
-            return _Records;
-        }
-        public static void Create(Empresa empresa)
-        {
-            _Records.Add(empresa);
-        }
+        public Empresa() { }
 
-        public static void ListarEmpresas()
+        public Empresa(int id)
         {
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
-                var cmd = new SqlCommand($"SELECT * FROM EMPRESAS", conn);
+                var cmd = new SqlCommand($"SELECT ID, NOME, CNPJ FROM EMPRESAS WHERE ID = {id}", conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        ID = reader.GetInt32(0);
+                        Nome = reader.GetString(1);
+                        CNPJ = reader.GetDecimal(2);
+                    }
+                }
+            }
+        }
+
+        public static List<Empresa> QuerryAll()
+        {
+            var lista = new List<Empresa>();
+
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"SELECT ID, NOME, CNPJ FROM EMPRESAS", conn);
                 conn.Open();
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine($"{reader[1]}");
+                        var id = reader.GetInt32(0);
+                        lista.Add(new Empresa()
+                        {
+                            ID = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            CNPJ = reader.GetDecimal(2),
+                    });
                     }
                 }
             }
+
+            return lista;
         }
 
-        public static void PreencherCadastro()
+        public void Cadastrar()
         {
-            Console.Write("Informe o nome da sua Empresa: ");
-            string nome = Console.ReadLine();
-
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
-                var cmd = new SqlCommand($"INSERT INTO EMPRESAS (ID, NOME)" +
-                $" VALUES (NEXT VALUE FOR EMPRESAS_SEQ, '{nome}')", conn);
+                var cmd = new SqlCommand($"INSERT INTO EMPRESAS (ID, NOME, CNPJ)" +
+                $" VALUES (NEXT VALUE FOR EMPRESAS_SEQ, '{Nome}', {Nome}, {CNPJ})", conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void Deletar()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var cmd = new SqlCommand($"DELETE FROM EMPRESAS WHERE ID = {ID}", conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Alterar()
+        {
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var querry = $"UPDATE EMPRESAS SET NOME = '{Nome}', CNPJ = {CNPJ} WHERE ID = {ID}";
+                var cmd = new SqlCommand(querry, conn);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }
