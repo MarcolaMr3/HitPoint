@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HitPointBib.Database;
+using HitPoint.Utils.Database;
 
-namespace HitPointBib.Entidades
+namespace HitPoint.Utils.Entidades
 {
     internal class Filial
     {

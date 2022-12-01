@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using HitPoint.Models;
+using HitPoint.Web.Models;
 using HitPoint.Utils.Entidades;
 
 

@@ -1,6 +1,6 @@
 ﻿namespace HitPoint.Models
 {
-    public class Usuario
+    public class UsuarioModel
     {
         public int ID { get; set; }
 
@@ -15,7 +15,7 @@
         public int LoginCount { get; set; }
 
         public UsuarioModel() { }
-        public UsuarioModel(Usuario user)
+        public UsuarioModel(UsuarioModel user)
         {
             ID = user.ID;
             Name = user.Name;
@@ -26,9 +26,9 @@
             Blocked = user.Blocked;
         }
 
-        public Usuario GenerateUser()
+        public UsuarioModel GenerateUser()
         {
-            var result = new Usuario()
+            var result = new UsuarioModel()
             {
                 ID = ID,
                 Name = Name,
@@ -42,7 +42,7 @@
             return result;
         }
 
-        internal static List<Usuario> QuerryAll()
+        internal static List<UsuarioModel> QuerryAll()
         {
             throw new NotImplementedException();
         }
