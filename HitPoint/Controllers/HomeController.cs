@@ -18,11 +18,15 @@ namespace HitPoint.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Empresa()
         {
             return View();
         }
-        public IActionResult Empresa()
+        public IActionResult Colaborador()
+        {
+            return View();
+        }
+        public IActionResult Filial()
         {
             return View();
         }

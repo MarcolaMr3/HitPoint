@@ -1,36 +1,19 @@
-﻿using HitPoint.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HitPoint.Controllers
+
+namespace HitPoint.Web.Controllers
 {
-    public class HomeController : Controller
+    public class FilialController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult ListarFil()
         {
-            _logger = logger;
+            var model = new FilialModel();
+            return View(model);
         }
 
-        public IActionResult Index()
+        public IActionResult CadastrarFil()
         {
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult Empresa()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

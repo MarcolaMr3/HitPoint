@@ -1,36 +1,24 @@
-﻿using HitPoint.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using HitPoint.Models;
+using HitPoint.Utils.Entidades;
 
-namespace HitPoint.Controllers
+
+
+namespace HitPoint.Web.Controllers
 {
-    public class HomeController : Controller
+    public class ColaboradorController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult ListarCol()
         {
-            _logger = logger;
+            var model = new ColaboradorModel();
+            return View(model);
         }
 
-        public IActionResult Index()
+        public IActionResult CadastrarCol()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult Empresa()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        
     }
 }
