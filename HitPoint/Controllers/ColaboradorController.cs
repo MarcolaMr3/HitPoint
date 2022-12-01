@@ -54,7 +54,7 @@ namespace HitPoint.Web.Controllers
             return View(model);
         }
         [HttpPost]
-        public IActionResult Delete(ColaboradorModel model)
+        public IActionResult Deletar(ColaboradorModel model)
         {
             var colaborador = model.GerarColaborador();
             colaborador.Deletar();
