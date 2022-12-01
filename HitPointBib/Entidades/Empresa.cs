@@ -67,7 +67,7 @@ namespace HitPoint.Utils.Entidades
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
                 var cmd = new SqlCommand($"INSERT INTO EMPRESAS (ID, NOME, CNPJ)" +
-                $" VALUES (NEXT VALUE FOR EMPRESAS_SEQ, '{Nome}', {Nome}, {CNPJ})", conn);
+                $" VALUES (NEXT VALUE FOR EMPRESAS_SEQ, '{Nome}', {CNPJ})", conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
