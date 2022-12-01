@@ -12,9 +12,10 @@
         <div class="form-group">
             <label for="empresaID">Empresa:</label>
             <select id="empresaID" class="form-select" asp-for="EmpresaID">
-                <option value="10">Empresa1</option>
-                <option value="20">Empresa2</option>
-                <option value="30">Empresa3</option>
+                @foreach (var empresa in Model.PegarEmpresas())
+                {
+                    <option value="@empresa.ID">@empresa.Nome</option>
+                }
             </select>
         </div>
         <div class="form-group">
@@ -23,6 +24,6 @@
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Alterar</button>
-        <a class="btn btn-secondary" asp-controller="Empresa" asp-action="ListarEmp">Voltar</a>
+        <a class="btn btn-secondary" asp-controller="Filial" asp-action="ListarFil">Voltar</a>
     </form>
 </div>

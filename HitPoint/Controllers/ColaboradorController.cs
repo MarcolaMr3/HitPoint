@@ -14,7 +14,8 @@ namespace HitPoint.Web.Controllers
 
         public IActionResult CadastrarCol()
         {
-            return View();
+            var model = new ColaboradorModel();
+            return View(model);
         }
 
         [HttpPost]
@@ -30,7 +31,7 @@ namespace HitPoint.Web.Controllers
             };
 
             colaborador.Cadastrar();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarCol");
         }
 
         public IActionResult Alterar(int id)
@@ -45,7 +46,7 @@ namespace HitPoint.Web.Controllers
         {
             var colaborador = model.GerarColaborador();
             colaborador.Alterar();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarCol");
         }
         public IActionResult Deletar(int id)
         {
@@ -59,7 +60,7 @@ namespace HitPoint.Web.Controllers
             var colaborador = model.GerarColaborador();
             colaborador.Deletar();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarCol");
         }
     }
 }

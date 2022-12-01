@@ -28,6 +28,7 @@ namespace HitPoint.Models
             };
             return result;
         }
+
     }
 }
 

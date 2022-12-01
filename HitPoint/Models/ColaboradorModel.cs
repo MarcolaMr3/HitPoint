@@ -31,4 +31,13 @@ public class ColaboradorModel
         };
         return result;
     }
+    public List<Empresa> PegarEmpresas()
+    {
+        return Empresa.QuerryAll();
+    }
+
+    public List<Filial> PegarFiliais()
+    {
+        return Filial.QuerryAll();
+    }
 }

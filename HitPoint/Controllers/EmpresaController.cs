@@ -27,7 +27,7 @@ namespace HitPoint.Web.Controllers
             };
 
             empresa.Cadastrar();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarEmp");
         }
 
         public IActionResult Alterar(int id)
@@ -42,7 +42,7 @@ namespace HitPoint.Web.Controllers
         {
             var empresa = model.GerarEmpresa();
             empresa.Alterar();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarEmp");
         }
         public IActionResult Deletar(int id)
         {
@@ -56,7 +56,7 @@ namespace HitPoint.Web.Controllers
             var empresa = model.GerarEmpresa();
             empresa.Deletar();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarEmp");
         }
     }
 }
