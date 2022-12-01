@@ -1,10 +1,11 @@
-﻿namespace HitPoint.Models
+﻿using HitPoint.Utils.Entidades;
+namespace HitPoint.Models
 {
     public class EmpresasModel
     {
-        public List<EmpresaModel> GetAll()
+        public List<Empresa> GetAll()
         {
-            return EmpresaModel.QuerryAll();
+            return Empresa.QuerryAll();
         }
     }
 }

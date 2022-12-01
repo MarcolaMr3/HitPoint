@@ -1,21 +1,12 @@
 ﻿@model ColaboradorModel
 @{
-    ViewData["Title"] = "Empresa";
+    ViewData["Title"] = "Colaborador";
 }
 <h1>@ViewData["Title"]</h1>
 
-@*
-ID
-Nome e Sobrenome
-PIS
-CPF
-Telefone
-Empresa ID
-Filial ID
-*@
 <div>
-    <h3 class="text-center">Cadastro de Empresa</h3>
-    <form asp-controller="Colaborador" asp-action="Add" method="post">
+    <h3 class="text-center">Cadastro de Colaborador</h3>
+    <form asp-controller="Colaborador" asp-action="CadastrarCol" method="post">
         <div class="form-group">
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" asp-for="Nome">
@@ -41,7 +32,7 @@ Filial ID
         <input type="text" class="form-control" id="pis" asp-for="PIS">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Create</button>
-        <a class="btn btn-secondary" asp-controller="Users" asp-action="Index">Back</a>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a class="btn btn-secondary" asp-controller="Colaborador" asp-action="ListarCol">Voltar</a>
     </form>
 </div>

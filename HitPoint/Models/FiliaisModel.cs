@@ -1,10 +1,11 @@
-﻿namespace HitPoint.Models
+﻿using HitPoint.Utils.Entidades;
+namespace HitPoint.Models
 {
     public class FiliaisModel
     {
-        public List<FilialModel> GetAll()
+        public List<Filial> GetAll()
         {
-            return FilialModel.QuerryAll();
+            return Filial.QuerryAll();
         }
     }
 }

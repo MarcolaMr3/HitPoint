@@ -1,5 +1,4 @@
 ﻿
-
 namespace HitPoint.Models
 {
     public class EmpresaModel
@@ -26,10 +25,6 @@ namespace HitPoint.Models
                 CNPJ = CNPJ,
             };
             return result;
-        }
-        internal static List<EmpresaModel> QuerryAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

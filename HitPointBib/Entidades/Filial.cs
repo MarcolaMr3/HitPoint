@@ -8,7 +8,7 @@ using HitPoint.Utils.Database;
 
 namespace HitPoint.Utils.Entidades
 {
-    internal class Filial
+    public class Filial
     {
         public int ID { get; set; }
         public string Nome { get; set; } = string.Empty;

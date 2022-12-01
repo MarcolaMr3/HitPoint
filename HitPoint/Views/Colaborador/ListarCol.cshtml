@@ -4,18 +4,10 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-@*
-ID
-Nome e Sobrenome
-PIS
-CPF
-Telefone
-Empresa ID
-Filial ID
-*@
+
 <div class="text-center">
     <h3>Colaboradores</h3>
-    <a type="button" class="btn btn-success float-end" asp-controller="Colaboradores" asp-action="CadastrarCol">Cadastrar Colaborador</a>
+    <a type="button" class="btn btn-success float-end" asp-controller="Colaborador" asp-action="CadastrarCol">Cadastrar Colaborador</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -38,7 +30,7 @@ Filial ID
                     <td>
                         <div>
                             <a type="button" class="btn btn-warning" asp-route-id="@colaborador.ID" asp-controller="Colaborador" asp-action="Alterar">Editar Colaborador</a>
-                            <a type="button" class="btn btn-danger" asp-route-id="@colaborador.ID" asp-controller="Colaborador" asp-action="Delete">Apagar Colaborador</a>
+                            <a type="button" class="btn btn-danger" asp-route-id="@colaborador.ID" asp-controller="Colaborador" asp-action="Deletar">Apagar Colaborador</a>
                         </div>
                     </td>
                 </tr>

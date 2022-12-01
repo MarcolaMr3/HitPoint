@@ -1,9 +1,9 @@
-﻿@model ColaboradorModel
+﻿@model FilialModel
 @{
-    ViewData["Title"] = "Colaboradores";
+    ViewData["Title"] = "Empresa";
 }
 <div>
-    <h3 class="text-center">Alterar Colaborador</h3>
+    <h3 class="text-center">Alterar Filial</h3>
     <form asp-controller="Colaborador" asp-action="Alterar" method="post">
         <div class="form-group">
             <label for="nome">Nome:</label>
@@ -18,19 +18,11 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="filialID">Filial:</label>
-            <select id="filialID" class="form-select" asp-for="FilialID">
-                <option value="10">Filial1</option>
-                <option value="20">Filial2</option>
-                <option value="30">Filial3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="pis">PIS:</label>
-            <input type="text" class="form-control" id="pis" asp-for="PIS">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" class="form-control" id="cnpj" asp-for="CNPJ">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Alterar</button>
-        <a class="btn btn-secondary" asp-controller="Colaborador" asp-action="ListarCol">Voltar</a>
+        <a class="btn btn-secondary" asp-controller="Empresa" asp-action="ListarEmp">Voltar</a>
     </form>
 </div>

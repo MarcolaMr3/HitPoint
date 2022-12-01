@@ -8,7 +8,7 @@ using HitPoint.Utils.Database;
 
 namespace HitPoint.Utilss.Entidades
 {
-    internal class Horarios
+    public class Horarios
     {
         public string Funcionario { get; set; } 
 

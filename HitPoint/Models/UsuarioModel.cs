@@ -41,11 +41,6 @@
 
             return result;
         }
-
-        internal static List<UsuarioModel> QuerryAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

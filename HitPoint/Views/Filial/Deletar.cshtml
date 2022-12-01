@@ -1,0 +1,14 @@
+﻿@model FilialModel
+@{
+    ViewData["Title"] = "Filial";
+} 
+
+<div class="text-center">
+    <h3 >Confirmar Exclusão</h3>
+    <form asp-controller="Filial" asp-action="Deletar" method="post">
+        <p>Tem certeze que deseja excluir a filial @Model.Nome?</p>
+
+        <a class="btn btn-danger" asp-controller="Filial" asp-action="ListarFil">Não</a>
+        <button type="submit" class="btn btn-primary">Sim</button>
+    </form>
+</div>

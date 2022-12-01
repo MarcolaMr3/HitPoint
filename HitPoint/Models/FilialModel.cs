@@ -27,10 +27,6 @@
             };
             return result;
         }
-        internal static List<FilialModel> QuerryAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
