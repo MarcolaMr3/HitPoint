@@ -26,7 +26,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
+                                <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Página Inicial</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -48,13 +48,13 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li>
-                                        <a class="dropdown-item" asp-controller="Users" asp-action="Index">Cadastrar Empresa</a>
+                                        <a class="dropdown-item" asp-controller="Empresa" asp-action="CadastrarEmp">Cadastrar Empresa</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-action="ListarEmp">Listar Empresas</a>
+                                        <a class="dropdown-item" asp-controller="Empresa" asp-action="ListarEmp">Listar Empresas</a>
                                     </li>
                                 </ul>
                             </li>
@@ -64,21 +64,17 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li>
-                                        <a class="dropdown-item" asp-action="CadastrarCol" asp-controller="ColaboradorController">Cadastrar Colaborador</a>
+                                        <a class="dropdown-item" asp-action="CadastrarCol" asp-controller="Colaborador">Cadastrar Colaborador</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-action="ListarCol" asp-controller="ColaboradorController">Listar Colaboradores</a>
+                                        <a class="dropdown-item" asp-action="ListarCol" asp-controller="Colaborador">Listar Colaboradores</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
-                        </form>
                     </div>
                 </div>
             </div>

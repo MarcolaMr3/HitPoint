@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HitPoint.Models;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace HitPoint.Web.Controllers

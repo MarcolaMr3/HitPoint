@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using HitPoint.Web.Models;
 using HitPoint.Utils.Entidades;
-
-
+using HitPoint.Models;
 
 namespace HitPoint.Web.Controllers
 {
