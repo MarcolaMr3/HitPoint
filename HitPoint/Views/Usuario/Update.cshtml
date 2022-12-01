@@ -3,8 +3,8 @@
     ViewData["Title"] = "Usuario";
 }
 <div>
-    <h3 class="text-center">Updating Users</h3>
-    <form asp-controller="Usuario" asp-action="Alterar" method="post">
+    <h3 class="text-center">Alterar Usuario</h3>
+    <form asp-controller="Usuarios" asp-action="Alterar" method="post">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" asp-for="Name">
@@ -26,6 +26,6 @@
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Index">Back</a>
+        <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Index">Back</a>
     </form>
 </div>

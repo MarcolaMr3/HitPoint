@@ -4,7 +4,7 @@
 }
 <div class="text-center">
     <h3>Users Listing</h3>
-    <a type="button" class="btn btn-success float-end" asp-controller="Usuario" asp-action="Adicionar"></a>
+    <a type="button" class="btn btn-success float-end" asp-controller="Usuarios" asp-action="Adicionar"></a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,8 +24,8 @@
                     <td>@usuario.AcessType</td>
                     <td>
                         <div>
-                            <a type="button" class="btn btn-warning" asp-route-id="@usuario.ID" asp-controller="Usuario" asp-action="Alterar"></a>
-                            <a type="button" class="btn btn-danger" asp-route-id="@usuario.ID" asp-controller="Usuario" asp-action="Apagar"></a>
+                            <a type="button" class="btn btn-warning" asp-route-id="@usuario.ID" asp-controller="Usuarios" asp-action="Alterar"></a>
+                            <a type="button" class="btn btn-danger" asp-route-id="@usuario.ID" asp-controller="Usuarios" asp-action="Apagar"></a>
                         </div>
                     </td>
                 </tr>
