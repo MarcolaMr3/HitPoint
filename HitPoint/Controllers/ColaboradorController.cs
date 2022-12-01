@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using HitPoint.Models;
+using HitPoint.Utils.Entidades;
+
 
 
 namespace HitPoint.Web.Controllers
@@ -15,5 +18,7 @@ namespace HitPoint.Web.Controllers
         {
             return View();
         }
+
+        
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace HitPointBib.Database
+namespace HitPoint.Utils.Database
 {
     public class DBInfo
     {

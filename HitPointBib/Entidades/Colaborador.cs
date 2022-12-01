@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using HitPointBib.Database;
+using HitPoint.Utils.Database;
 using System.Xml.Linq;
 
-namespace HitPointBib.Entidades
+namespace HitPoint.Utils.Entidades
 {
     public class Colaborador
     {
