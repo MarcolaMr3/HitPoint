@@ -1,4 +1,4 @@
-﻿using HitPoint.Utils.Entidades;
+﻿
 using HitPointBib.Entidades;
 
 namespace HitPoint.Models
