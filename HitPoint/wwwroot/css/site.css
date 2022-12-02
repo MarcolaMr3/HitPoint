@@ -96,8 +96,8 @@ footer {
     
 }
 html {
-    position: relative;
-    min-height: 100%;
+    
+    
     font-size: 14px;
 }
 
@@ -116,11 +116,11 @@ body {
     height:100%;
 }
 .formContent {
-    width: 100%;
+    
     background: #ffffff;
     border-radius: 10px;
     padding:10px;
-    height: 100%;
+    
 }
 .HitPointLogo {
     width: 10%;
