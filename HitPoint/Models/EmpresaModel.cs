@@ -1,4 +1,6 @@
 ﻿
+using HitPoint.Utils.Entidades;
+
 namespace HitPoint.Models
 {
     public class EmpresaModel
@@ -9,16 +11,16 @@ namespace HitPoint.Models
 
 
         public EmpresaModel() { }
-        public EmpresaModel(EmpresaModel empresa)
+        public EmpresaModel(Empresa empresa)
         {
             ID = empresa.ID;
             Nome = empresa.Nome;
             CNPJ = empresa.CNPJ;
         }
 
-        public EmpresaModel GerarEmpresa()
+        public Empresa GerarEmpresa()
         {
-            var result = new EmpresaModel()
+            var result = new Empresa()
             {
                 ID = ID,
                 Nome = Nome,
@@ -26,6 +28,7 @@ namespace HitPoint.Models
             };
             return result;
         }
+
     }
 }
 

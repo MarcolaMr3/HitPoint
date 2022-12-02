@@ -1,35 +1,43 @@
 ﻿using HitPoint.Utils.Entidades;
-namespace HitPoint.Models
+namespace HitPoint.Models;
+
+public class ColaboradorModel
 {
-    public class ColaboradorModel
+    public int ID { get; set; }
+    public string Nome { get; set; } = string.Empty;
+    public int EmpresaID { get; set; }
+    public int FilialID { get; set; }
+    public decimal PIS { get; set; }
+
+    public ColaboradorModel() { }
+    public ColaboradorModel(Colaborador colaborador)
     {
-        public int ID { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public int EmpresaID { get; set; }
-        public int FilialID { get; set; }
-        public decimal PIS { get; set; }
+        ID = colaborador.ID;
+        Nome = colaborador.Nome;
+        EmpresaID = colaborador.EmpresaID;
+        FilialID = colaborador.FilialID;
+        PIS = colaborador.PIS;
+    }
 
-        public ColaboradorModel() { }
-        public ColaboradorModel(ColaboradorModel colaborador)
+    public Colaborador GerarColaborador()
+    {
+        var result = new Colaborador()
         {
-            ID = colaborador.ID;
-            Nome = colaborador.Nome;
-            EmpresaID = colaborador.EmpresaID;
-            FilialID = colaborador.FilialID;
-            PIS = colaborador.PIS;
-        }
+            ID = ID,
+            Nome = Nome,
+            EmpresaID = EmpresaID,
+            FilialID = FilialID,
+            PIS = PIS,
+        };
+        return result;
+    }
+    public List<Empresa> PegarEmpresas()
+    {
+        return Empresa.QuerryAll();
+    }
 
-        public ColaboradorModel GerarColaborador()
-        {
-            var result = new ColaboradorModel()
-            {
-                ID = ID,
-                Nome = Nome,
-                EmpresaID = EmpresaID,
-                FilialID = FilialID,
-                PIS = PIS,
-            };
-            return result;
-        }
+    public List<Filial> PegarFiliais()
+    {
+        return Filial.QuerryAll();
     }
 }

@@ -2,7 +2,23 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha">
+            <input type="submit" class="fadeIn fourth" value="Entrar">
+        </form>
+
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Esqueceu sua senha?</a>
+        </div>
+
+    </div>
 </div>

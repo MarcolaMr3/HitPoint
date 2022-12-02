@@ -1,0 +1,35 @@
+﻿@model UsuariosModel
+@{
+    ViewData["Title"] = "Usuários";
+}
+<div class="text-center">
+    <h3>Usuario Listagem</h3>
+    <a type="button" class="btn btn-success float-end" asp-controller="Usuarios" asp-action="Adicionar"></a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Nickname</th>
+                <th>Access Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model.GetAll())
+            {
+                <tr>
+                    <td>@usuario.ID.ToString("D5")</td>
+                    <td>@usuario.Name</td>
+                    <td>@usuario.NickName</td>
+                    <td>@usuario.AcessType</td>
+                    <td>
+                        <div>
+                            <a type="button" class="btn btn-warning" asp-route-id="@usuario.ID" asp-controller="Usuarios" asp-action="Alterar"></a>
+                            <a type="button" class="btn btn-danger" asp-route-id="@usuario.ID" asp-controller="Usuarios" asp-action="Apagar"></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

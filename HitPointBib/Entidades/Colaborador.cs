@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using HitPoint.Utils.Database;
 using System.Xml.Linq;
+using System.Collections;
 
 namespace HitPoint.Utils.Entidades
 {
@@ -102,5 +103,43 @@ namespace HitPoint.Utils.Entidades
             }
         }
 
+        public string PegarNomeEmpresa()
+        {
+            var result = string.Empty;
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var querry = $"SELECT NOME FROM EMPRESAS WHERE ID = {EmpresaID}";
+                var cmd = new SqlCommand(querry, conn);
+
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                      result = reader.GetString(0);
+                    }
+                }
+            }
+            return result;
+        }
+        public string PegarNomeFilial()
+        {
+            var result = string.Empty;
+            using (var conn = new SqlConnection(DBInfo.DBConnection))
+            {
+                var querry = $"SELECT NOME FROM FILIAIS WHERE ID = {FilialID}";
+                var cmd = new SqlCommand(querry, conn);
+
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        result = reader.GetString(0);
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

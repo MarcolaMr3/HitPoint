@@ -1,0 +1,29 @@
+﻿@model PontosModel
+@{
+    ViewData["Title"] = "Marcações";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="text-center">
+    <h3>Marcações:</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Marcação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ponto in Model.GetAll())
+            {
+                <tr>
+                    <td>@ponto.ID.ToString("D5")</td>
+                    <td>@ponto.PegarNomeFuncionario()</td>
+                    <td>@ponto.Marcacao.ToString("f")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

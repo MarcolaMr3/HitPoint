@@ -1,4 +1,8 @@
-﻿namespace HitPoint.Models
+﻿using HitPoint.Utils.Database;
+using HitPoint.Utils.Entidades;
+using System.Data.SqlClient;
+
+namespace HitPoint.Models
 {
     public class FilialModel
     {
@@ -8,7 +12,7 @@
         public decimal CNPJ { get; set; }
 
         public FilialModel() { }
-        public FilialModel(FilialModel filial)
+        public FilialModel(Filial filial)
         {
             ID = filial.ID;
             Nome = filial.Nome;
@@ -16,9 +20,9 @@
             CNPJ = filial.CNPJ;
         }
 
-        public FilialModel GerarFilial()
+        public Filial GerarFilial()
         {
-            var result = new FilialModel()
+            var result = new Filial()
             {
                 ID = ID,
                 Nome = Nome,
@@ -26,6 +30,11 @@
                 CNPJ = CNPJ,
             };
             return result;
+        }
+
+        public List<Empresa> PegarEmpresas()
+        {
+            return Empresa.QuerryAll();
         }
     }
 }
