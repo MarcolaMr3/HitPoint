@@ -10,6 +10,7 @@
 
 
 <div class="loginPage">
+    <form asp-action="" asp-for="Funcionario" asp-controller="Ponto" method="post">
     <div class="form-group">
         <label for="funcionario">Funcionário:</label>
         <select id="funcionario" class="form-select" asp-for="Funcionario">
@@ -19,7 +20,6 @@
             }
         </select>
     </div>
-    <form asp-action="" asp-for="Funcionario" asp-controller="Ponto" method="post">
      <h2>Marcação de Ponto: @DateTime.Now.ToString("g")</h2>
 
     <button id="marcar" name="marcar" type="Submit" class="btn btn-primary">MARCAR O PONTO</button>
