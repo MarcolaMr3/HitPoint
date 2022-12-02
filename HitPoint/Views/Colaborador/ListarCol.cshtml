@@ -6,8 +6,9 @@
 
 
 <div class="text-center forms">
-    <h3>Colaboradores</h3>
-    <a type="button" class="btn btn-success float-end" asp-controller="Colaborador" asp-action="CadastrarCol">Cadastrar Colaborador</a>
+    
+    
+    <a type="button" asp-controller="Colaborador" asp-action="CadastrarCol" class="btn btn1">Cadastrar Colaborador</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -29,8 +30,9 @@
                     <td>@colaborador.PIS</td>
                     <td>
                         <div>
-                            <a type="button" class="btn btn-warning" asp-route-id="@colaborador.ID" asp-controller="Colaborador" asp-action="Alterar">Editar Colaborador</a>
-                            <a type="button" class="btn btn-danger" asp-route-id="@colaborador.ID" asp-controller="Colaborador" asp-action="Deletar">Apagar Colaborador</a>
+                            
+                            <a type="button" asp-controller="Colaborador" asp-route-id="@colaborador.ID" asp-action="Alterar" class="btn btn1">Editar Colaborador</a>
+                            <a type="button" asp-controller="Colaborador" asp-route-id="@colaborador.ID" asp-action="Deletar" class="btn btn1">Apagar Colaborador</a>
                         </div>
                     </td>
                 </tr>

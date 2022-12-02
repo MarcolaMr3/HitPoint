@@ -7,7 +7,8 @@
 
 <div class="text-center forms">
     <h3>Empresas</h3>
-    <a type="button" class="btn btn-success float-end" asp-controller="Empresa" asp-action="CadastrarEmp">Cadastrar Empresa</a>
+    
+    <a type="button" asp-controller="Empresa" asp-action="CadastrarEmp" class="btn btn1">Cadastrar Empresa</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -25,8 +26,9 @@
                     <td>@empresa.CNPJ</td>
                     <td>
                         <div>
-                            <a type="button" class="btn btn-warning" asp-route-id="@empresa.ID" asp-controller="Empresa" asp-action="Alterar">Editar Empresa</a>
-                            <a type="button" class="btn btn-danger" asp-route-id="@empresa.ID" asp-controller="Empresa" asp-action="Deletar">Apagar Empresa</a>
+                            
+                            <a type="button" asp-controller="Empresa" asp-route-id="@empresa.ID" asp-action="Alterar" class="btn btn1">Editar Empresa</a>
+                            <a type="button" asp-controller="Empresa" asp-route-id="@empresa.ID" asp-action="Deletar" class="btn btn1">Apagar Empresa</a>
                         </div>
                     </td>
                 </tr>
