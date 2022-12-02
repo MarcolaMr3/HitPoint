@@ -24,6 +24,11 @@ namespace HitPoint.Models
             return result;
         }
 
+        public List<Colaborador> PegarFuncionarios()
+        {
+            return Colaborador.QuerryAll();
+        }
+
     }
 }
 

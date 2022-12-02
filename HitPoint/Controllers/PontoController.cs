@@ -8,13 +8,35 @@ namespace HitPoint.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult GerarMarcacao()
-        {
             var model = new PontoModel();
             return View(model);
         }
 
+        public IActionResult ListarMar()
+        {
+            var model = new PontosModel();
+            return View(model);
+        }
+
+        //[HttpPost]
+        //public IActionResult Index(PontoModel model)
+        //{
+        //    var ponto = new Ponto()
+        //    {
+        //        Funcionario = model.Funcionario
+        //    };
+
+        //    ponto.MarcarPonto();
+        //    return RedirectToAction("ListarMar");
+        //}
+
+        [HttpPost]
+        public IActionResult Index(PontoModel model)
+        {
+            var ponto = model.GerarMarcacao();
+            ponto.MarcarPonto();
+
+            return RedirectToAction("ListarMar");
+        }
     }
 }
