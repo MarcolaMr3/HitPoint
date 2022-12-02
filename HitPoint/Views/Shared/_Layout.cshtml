@@ -12,7 +12,9 @@
     <header>
         <nav class="navbar  navbar-dark bg-dark position-sticky">
             <div class="container-fluid">
-                <img class="HitPointLogo" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Hitpoint_Studios_Logo.png" />
+                <div class="col-md-4">
+                    <img runat="server" src='<%=ResolveClientUrl("~/image/Logotipo.png")%>' />
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,7 +87,7 @@
         </main>
     </div>
 
-   @* <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">      
         <div class="container">
             &copy; 2022 - HitPoin.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

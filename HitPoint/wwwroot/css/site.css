@@ -7,7 +7,9 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
-
+.col-md-4 {
+    
+}
 
 
 :root {
@@ -88,50 +90,33 @@ html {
     border-radius: 5px;
     height: 10%;
     width: 100%;
-   
+    
 }
 footer {
     
 }
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+}
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
     html {
         font-size: 16px;
-        padding: 10px;
+        padding: 30px;
+        background: #f2d87e;
     }
 }
 
-html {
-    position: relative;
-    
-}
-
 body {
+    width:100%;
+    background: #ffffff;
+    border-radius: 10px;
     margin-bottom: 60px;
 }
 
 .HitPointLogo {
     width: 10%;
-  
 }
 
-
-element {
-    width: 280px;
-}
-
-.p-3 {
-    padding: 1rem !important;
-}
-
-.flex-shrink-0 {
-    flex-shrink: 0 !important;
-}
-
-.flex-column {
-    flex-direction: column !important;
-}
-
-.d-flex {
-    display: flex !important;
-}
