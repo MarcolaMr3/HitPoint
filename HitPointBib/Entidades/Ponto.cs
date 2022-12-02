@@ -18,6 +18,7 @@ namespace HitPoint.Utils.Entidades
         {
             using (var conn = new SqlConnection(DBInfo.DBConnection))
             {
+                
                 var cmd = new SqlCommand($"INSERT INTO HORARIOS (FUNCIONARIO)" +
                 $" VALUES ({Funcionario})", conn);
                 conn.Open();

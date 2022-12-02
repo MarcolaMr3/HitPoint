@@ -18,24 +18,15 @@ namespace HitPoint.Web.Controllers
             return View(model);
         }
 
-        //[HttpPost]
-        //public IActionResult Index(PontoModel model)
-        //{
-        //    var ponto = new Ponto()
-        //    {
-        //        Funcionario = model.Funcionario
-        //    };
-
-        //    ponto.MarcarPonto();
-        //    return RedirectToAction("ListarMar");
-        //}
-
         [HttpPost]
         public IActionResult Index(PontoModel model)
         {
-            var ponto = model.GerarMarcacao();
-            ponto.MarcarPonto();
+            var ponto = new Ponto()
+            {
+                Funcionario = model.Funcionario
+            };
 
+            ponto.MarcarPonto();
             return RedirectToAction("ListarMar");
         }
     }

@@ -22,6 +22,6 @@
     <form asp-action="" asp-for="Funcionario" asp-controller="Ponto" method="post">
      <h2>Marcação de Ponto: @DateTime.Now.ToString("g")</h2>
 
-    <button id="marcar" name="marcar" type="Submit" class="btn btn-primary">MARCAR O PONTO</button>
+    <button id="marcar" name="marcar" type="Submit" class="btn btn-primary" asp-for="Model.Funcionario">MARCAR O PONTO</button>
 </form>
 </div>
