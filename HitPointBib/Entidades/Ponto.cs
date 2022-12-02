@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using HitPoint.Utils.Database;
 
-namespace HitPoint.Utilss.Entidades
+namespace HitPoint.Utils.Entidades
 {
-    public class Horarios
+    public class Ponto
     {
-        public string Funcionario { get; set; } 
+        public int Funcionario { get; set; } 
 
         public void MarcarPonto()
         {

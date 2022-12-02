@@ -120,3 +120,13 @@ body {
     width: 10%;
 }
 
+.d-flex {
+    display: flex !important;
+}
+
+.loginPage {
+    height: 50%;
+    display: block;
+    width: 50%;
+    margin: auto;
+}
