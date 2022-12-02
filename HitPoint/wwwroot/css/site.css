@@ -113,11 +113,11 @@ body {
 }
 
 .loginPage {
-    height: 50%;
-    display: block;
-    width: 50%;
-    margin: auto;
-}
+    /*    height: 50%;
+        display: block;
+        width: 50%;
+        margin: auto;
+    }*/
 /* Botao
  Botao
  Botao*/
@@ -128,7 +128,7 @@ body {
 }
 
 .middle {
-    position: absolute;
+    /*position: absolute;*/
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -171,3 +171,20 @@ body {
 /* Botao
  Botao
  Botao*/
+
+
+input#pis.form-control{
+    width: 1200px;
+}
+
+select#filialID.form-select {
+    width: 1200px;
+}
+
+select#empresaID.form-select {
+    width: 1200px;
+}
+
+input#nome.form-control {
+    width: 1200px;
+}
