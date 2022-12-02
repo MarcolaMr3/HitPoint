@@ -5,9 +5,11 @@
 <h1>@ViewData["Title"]</h1>
 
 
-<div class="text-center">
+<div class="text-center forms">
     <h3>Filiais</h3>
-    <a type="button" class="btn btn-success float-end" asp-controller="Filial" asp-action="CadastrarFil">Cadastrar Filial</a>
+    
+    
+    <a type="button" asp-controller="Filial" asp-action="CadastrarFil" class="btn btn1">Cadastrar Filial</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -27,8 +29,10 @@
                     <td>@filial.CNPJ</td>
                     <td>
                         <div>
-                            <a type="button" class="btn btn-warning" asp-route-id="@filial.ID" asp-controller="Filial" asp-action="Alterar">Editar Filial</a>
-                            <a type="button" class="btn btn-danger" asp-route-id="@filial.ID" asp-controller="Filial" asp-action="Deletar">Apagar Filial</a>
+                            <a type="button" asp-controller="Filial" asp-route-id="@filial.ID" asp-action="Alterar" class="btn btn1">Editar Filial</a>
+                            <a type="button" asp-controller="Filial" asp-route-id="@filial.ID" asp-action="Deletar" class="btn btn1">Apagar Filial</a>
+                          
+                            
                         </div>
                     </td>
                 </tr>
