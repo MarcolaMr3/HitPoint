@@ -5,7 +5,7 @@ namespace HitPoint.Utils.Database
     public class DBInfo
     {
 
-        public const string DBConnection = @"Data Source=DESKTOP-NO1H2EK\SQLEXPRESS;Initial catalog=HitPoint;User=sa;Password=12345678;Trusted_Connection=True;";
+        public const string DBConnection = @"Data Source=DESKTOP-G6C06E4\SQLEXPRESS;Initial catalog=HitPoint;User=sa;Password=sa;Trusted_Connection=True;";
 
 
         public static void TestarBanco()
