@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace HitPoint.Utils
 {
     internal class GeradorRegistro
     {
-        static void Pontotxt()
+        static void GetAll()
         {
             {
                 // 1: Escreve um linha para o novo arquivo

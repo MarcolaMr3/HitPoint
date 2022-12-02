@@ -15,6 +15,7 @@
                 <th>Marcação</th>
             </tr>
         </thead>
+
         <tbody>
             @foreach (var ponto in Model.GetAll())
             {
@@ -24,6 +25,16 @@
                     <td>@ponto.Marcacao.ToString("f")</td>
                 </tr>
             }
+            @*<a type="button" class="btn btn-success float-end" asp-controller="Ponto" asp-action="GeradorRegistro">Gerar o Txt</a>*@
+            
+
+
         </tbody>
     </table>
+    <button type="button" onclick="Evento()">Evento</button>
+    <script>
+        function Evento() {
+            alert('evento funcionando')
+        }
+    </script>
 </div>
