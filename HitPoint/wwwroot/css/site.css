@@ -111,11 +111,11 @@ body {
 }
 
 .loginPage {
-    /*    height: 50%;
+        height: 50%;
         display: block;
         width: 50%;
         margin: auto;
-    }*/
+    }
 /* Botao
  Botao
  Botao*/
@@ -126,7 +126,7 @@ body {
 }
 
 .middle {
-    /*position: absolute;*/
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -134,7 +134,7 @@ body {
 
 .btn {
     position: relative;
-    color: black;
+   
     font-size: 15px;
     font-family: Monospace;
     text-decoration: none;
